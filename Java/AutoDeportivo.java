@@ -1,15 +1,15 @@
-//extender de la clase Auto (herencia)
+// Extiende de la clase Auto HERENCIA
 public class AutoDeportivo extends Auto {
     private boolean turbo;
 
-    // Constructor que usa el constructor de la clase base (super)
+    // Constructor
     public AutoDeportivo(String marca, String modelo, int año, double velocidad, boolean turbo) {
         super(marca, modelo, año, velocidad);
         this.turbo = turbo;
     }
 
     // Getter y Setter para el turbo
-    public boolean getTurbo() {
+    public boolean isTurbo() {
         return turbo;
     }
 
@@ -17,7 +17,7 @@ public class AutoDeportivo extends Auto {
         this.turbo = turbo;
     }
 
-    // Sobrescritura del método acelerar (polimorfismo)
+    // Implementación del método abstracto acelerar POLIMORFISMO
     @Override
     public void acelerar() {
         if (turbo) {
@@ -28,11 +28,21 @@ public class AutoDeportivo extends Auto {
         System.out.println("El auto deportivo está acelerando. Velocidad actual: " + getVelocidad() + " km/h");
     }
 
-    // Sobrescritura del método frenar
+    // Implementación del método abstracto frenar
     @Override
     public void frenar() {
         setVelocidad(getVelocidad() - 20);  // Los autos deportivos frenan más rápido
         if (getVelocidad() < 0) setVelocidad(0);
         System.out.println("El auto deportivo está frenando. Velocidad actual: " + getVelocidad() + " km/h");
+    }
+
+    // @Override
+    // public boolean isVelocidadMaximaAlcanzada(){
+    //     return getVelocidad() >= 300;
+    // }
+
+    // Método adicional con retorno booleano
+    public boolean isTurboActive() {
+        return turbo;
     }
 }

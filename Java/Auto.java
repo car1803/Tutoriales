@@ -1,9 +1,18 @@
-public class Auto {
-    // Atributos privados (encapsulamiento)
+// Clase abstracta Auto
+public abstract class Auto {
+    // Atrubutos publicos (pueden ser accedidos desde cualquier clase)
+    // Atributos protegidos (pueden ser accedidos por clases hijas)
+    // Atributos privados (solo pueden ser accedidos por la misma clase) ENCAPSULAMIENTO 
     private String marca;
     private String modelo;
     private int año;
     private double velocidad;
+    
+    public static boolean vehiculo = true;
+    // Atributo constante final (no se puede modificar) y estático (compartido por todas las instancias de Auto)
+    public final static int VELOCIDAD_MAXIMA = 200;
+
+    // System.out.println("Velocidad máxima: " + VELOCIDAD_MAXIMA);
 
     // Constructor
     public Auto(String marca, String modelo, int año, double velocidad) {
@@ -13,7 +22,27 @@ public class Auto {
         this.velocidad = velocidad;
     }
 
-    // Getters y Setters (encapsulamiento)
+    // Métodos abstractos (deben ser implementados por las subclases) ABSTRACCIÓN
+    public abstract void acelerar();
+
+    public abstract void frenar();
+
+    // Método estático (pertenece a la clase, no a las instancias)
+    public static String obtenerTipoDeVehiculo() {
+        return "Automóvil";
+    }
+
+    // Métodos no void (devuelven valores)
+    public String obtenerInfo() {
+        return "Marca: " + marca + ", Modelo: " + modelo + ", Año: " + año + ", Velocidad: " + velocidad + " km/h";
+    }
+
+    // Método final (no puede ser sobrescrito por las subclases)
+    public final boolean isVelocidadMaximaAlcanzada() {
+        return velocidad >= VELOCIDAD_MAXIMA;
+    }
+
+    // Getters y Setters
     public String getMarca() {
         return marca;
     }
@@ -45,18 +74,16 @@ public class Auto {
     public void setVelocidad(double velocidad) {
         this.velocidad = velocidad;
     }
-
-    // Método acelerar
-    public void acelerar() {
-        velocidad += 10;  // Aumenta la velocidad en 10 km/h
-        System.out.println("El auto está acelerando. Velocidad actual: " + velocidad + " km/h");
-    }
-    //añadir final y abstract
-    
-    // Método frenar
-    public void frenar() {
-        velocidad -= 10;  // Disminuye la velocidad en 10 km/h
-        if (velocidad < 0) velocidad = 0;  // La velocidad no puede ser negativa
-        System.out.println("El auto está frenando. Velocidad actual: " + velocidad + " km/h");
-    }
 }
+
+/*
+public: Accesible desde cualquier lugar (clase, paquete, subclases, etc.).
+protected: Accesible desde clases hijas y clases del mismo paquete.
+private: Solo accesible dentro de la misma clase.
+*/
+
+/*
+En Java, no se puede colocar código ejecutable directamente 
+dentro del cuerpo de una clase fuera de un método, constructor 
+o bloque estático.
+*/
