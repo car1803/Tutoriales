@@ -15,6 +15,7 @@ body {
 header {
     text-align: left;
     padding: 10px;
+    overflow: auto; 
 }
 
 header img.image {
@@ -49,6 +50,7 @@ main {
     padding: 20px;
     background-color: green;
     border-radius: 30px;    
+    overflow: auto; 
 }
 
 main p, main ul li span{
@@ -56,12 +58,6 @@ main p, main ul li span{
     color: black; 
     display: inline; 
     font-weight: bold; 
-}
-
-header::after, main::after {
-    content: "";
-    display: block;
-    clear: both;
 }
 
 footer {
