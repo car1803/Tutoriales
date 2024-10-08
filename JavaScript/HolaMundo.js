@@ -82,3 +82,4 @@ s = "hola mundo";
 s[0] = "H"; // No se puede modificar un carácter de una cadena
 s = s.replace("h","H");
 console.log(s);
+

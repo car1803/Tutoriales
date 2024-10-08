@@ -36,11 +36,13 @@ public class AutoDeportivo extends Auto {
         System.out.println("El auto deportivo está frenando. Velocidad actual: " + getVelocidad() + " km/h");
     }
 
-    // @Override
-    // public boolean isVelocidadMaximaAlcanzada(){
-    //     return getVelocidad() >= 300;
-    // }
-
+    /*
+    @Override
+    public boolean isVelocidadMaximaAlcanzada(){
+         return getVelocidad() >= 300;
+    }
+    */
+    
     // Método adicional con retorno booleano
     public boolean isTurboActive() {
         return turbo;

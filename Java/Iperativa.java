@@ -1,6 +1,5 @@
 import java.util.Scanner;
 public class Iperativa {
-    @SuppressWarnings("resource")
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -13,7 +12,7 @@ public class Iperativa {
             numero = scanner.nextInt();
         } catch (Exception e) {
             System.out.println("Error: Debes introducir un número válido.");
-            scanner.next(); // Limpiar el buffer del scanner
+            scanner.close();
             return; // Salir del programa si hay un error
         }
 
@@ -66,11 +65,11 @@ public class Iperativa {
         // Uso de for-each con un arreglo
         System.out.println("\nNúmeros pares hasta el número ingresado:");
         int[] numerosPares = {2, 4, 6, 8, 10};
-        for (int par : numerosPares) {
-            if (par > numero) {
+        for (int i : numerosPares) {
+            if (i > numero) {
                 break; // Rompe el ciclo si el número es mayor que el ingresado
             }
-            System.out.println(par);
+            System.out.println(i);
         }
 
         // Cerrar el scanner

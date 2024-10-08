@@ -1,13 +1,12 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
 public class JavaArraysExample {
     public static void main(String[] args) {
         // 1. Definir un array de manera directa
         int[] directArray = {1, 2, 3, 4, 5};
         System.out.println("Array directo: " + Arrays.toString(directArray));
-
+        
         // 2. Definir un array asignando capacidad
         int[] assignedArray = new int[5];
         Arrays.fill(assignedArray, 9);  // Llenar con valor 9
@@ -58,6 +57,7 @@ public class JavaArraysExample {
         row2.add(3);
         row2.add(4);
         arrayList2D.add(row2);
+        //int valueFromArrayList2D = arrayList2D[0][1];
         int valueFromArrayList2D = arrayList2D.get(0).get(1);  // Acceder a un valor
         System.out.println("Valor de la lista 2D: " + valueFromArrayList2D);
     }

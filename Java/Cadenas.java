@@ -1,11 +1,10 @@
 public class Cadenas {
-    // Declaración primitivo: 
     public void main(String[] args) {
-    
+    // Declaración primitivo: 
     String str = "letras, números, símbolos y espacios";
     // Declaracion referencia:
     String str2 = new String("letras, números, símbolos y espacios");
-
+    
     // charAt - Obtener el carácter en el índice 0
     char firstChar = str.charAt(0);
     System.out.println("charAt(0): " + firstChar);
