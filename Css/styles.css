@@ -1,0 +1,72 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: greenyellow; /* Fondo verde claro */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+header {
+    text-align: left;
+    padding: 10px;
+}
+
+header img.image {
+    float: left;
+    margin-right: 15px;
+    width: 200px;
+    height: auto;
+}
+
+header h1, p {
+    margin: 0;
+    color: black;
+}
+
+nav {
+    padding: 10px;
+}
+
+nav ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+nav ul li a {
+    margin-bottom: 5px;
+    color: blue; 
+    text-decoration: underline; 
+    border-color: black;
+}
+
+main {
+    padding: 20px;
+    background-color: green;
+    border-radius: 30px;    
+}
+
+main p, main ul li span{
+    background-color: greenyellow; 
+    color: black; 
+    display: inline; 
+    font-weight: bold; 
+}
+
+header::after, main::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+footer {
+    text-align: center;
+    color: black;
+    padding: 10px;
+    margin-top: 10px;
+}
